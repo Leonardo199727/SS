@@ -6,3 +6,11 @@
     width: 100px;
     height: 100px;
 }
+
+#resultados-material div {
+    padding: 5px;
+    border: 1px solid #ddd;
+    margin-top: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+}

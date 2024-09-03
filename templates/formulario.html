@@ -34,7 +34,7 @@
 
             <div class="mb-3">
                 <label for="carrera" class="form-label">Carrera:</label>
-                <select class="form-select" id="carrera" name="carrera" onchange="updateOptions(),toggleOtroCampo()">
+                <select class="form-select" id="carrera" name="carrera" onchange="updateOptions(), toggleOtroCampo(), toggleMaterialBusqueda(), toggleAreaCampo()">
                     <option value="">Selecciona una carrera</option>
                     <option value="Otra">Otra</option>
                     {% for carrera in carreras %}
@@ -48,11 +48,29 @@
                 <input type="text" class="form-control" id="otra-carrera" name="otra-carrera">
             </div>
 
-            <!-- Nuevo campo para seleccionar el profesor -->
+            <!-- Campo para seleccionar el profesor -->
             <div id="profesor-campo" class="mb-3 hidden">
                 <label for="profesor" class="form-label">Profesor:</label>
                 <select class="form-select" id="profesor" name="profesor">
                     <option value="">Selecciona un profesor</option>
+                </select>
+            </div>
+
+            <!-- Campo de búsqueda de materiales -->
+            <div id="material-busqueda-campo" class="mb-3 hidden">
+                <label for="material-busqueda" class="form-label">Material solicitado:</label>
+                <input type="text" class="form-control" id="material-busqueda" name="material-busqueda" placeholder="Buscar material...">
+                <div id="resultados-material"></div>
+            </div>
+
+            <!-- Campo para seleccionar el área -->
+            <div id="area-campo" class="mb-3 hidden">
+                <label for="area" class="form-label">Área solicitada:</label>
+                <select class="form-select" id="area" name="area">
+                    <option value="">Selecciona un área</option>
+                    {% for area in areas %}
+                        <option value="{{ area.id }}">{{ area.nombre }}</option>
+                    {% endfor %}
                 </select>
             </div>
 
